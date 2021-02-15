@@ -16,3 +16,5 @@ router.get("/exercise", () => {
 router.get("/stats", () => {
     res.sendFile(path.join(__dirname, "../public/stats.html"));
 });
+
+module.exports = router;

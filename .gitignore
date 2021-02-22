@@ -1,3 +1,4 @@
 node_modules
 .env
 herokuAtlasSettings
+package-lock.json

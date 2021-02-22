@@ -1,19 +1,20 @@
 const router = require("express").Router();
 const path = require("path");
 
-router.get("/", () => {
+router.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "../public/index.html"));
 });
 
-router.get("/index", () => {
+router.get("/index", (req, res) => {
     res.sendFile(path.join(__dirname, "../public/index.html"));
 });
 
-router.get("/exercise", () => {
+router.get("/exercise", (req, res) => {
+    console.log("trying to nav to /exercise")
     res.sendFile(path.join(__dirname, "../public/exercise.html"));
 });
 
-router.get("/stats", () => {
+router.get("/stats", (req, res) => {
     res.sendFile(path.join(__dirname, "../public/stats.html"));
 });
 

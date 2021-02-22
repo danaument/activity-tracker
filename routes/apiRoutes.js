@@ -17,13 +17,15 @@ const workout = require("../models/workout.js");
 // });
 
 router.put("/api/workouts/:id", (req, res) => {
+  console.log(req.body);
   workout
     .findOneAndUpdate(
-      { id: req.params.id },
-      { $push: { exercise: req.body.body } },
-      { new: true }
+      { _id: req.params.id },
+      { $push: { exercises: req.body } },
+      { new: true, runValidators: true }
     )
     .then((workout) => {
+      console.log(workout);
       res.json(workout);
     })
     .catch((err) => {
@@ -45,7 +47,9 @@ router.post("/api/workouts/", ({ body }, res) => {
 router.get("/api/workouts/range", (req, res) => {
   workout
     .find({})
+    .limit(7)
     .then((dbworkout) => {
+      console.log(dbworkout);
       res.json(dbworkout);
     })
     .catch((err) => {
@@ -56,7 +60,6 @@ router.get("/api/workouts/range", (req, res) => {
 router.get("/api/workouts", (req, res) => {
   workout
     .find({})
-    // .limit(1)  //it looks like the front end expects all the work outs and then only returns json[json.length - 1]
     .sort({ date: -1 })
     .then((dbworkout) => {
       res.json(dbworkout);

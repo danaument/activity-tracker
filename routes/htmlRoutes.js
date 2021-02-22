@@ -10,7 +10,6 @@ router.get("/index", (req, res) => {
 });
 
 router.get("/exercise", (req, res) => {
-    console.log("trying to nav to /exercise")
     res.sendFile(path.join(__dirname, "../public/exercise.html"));
 });
 

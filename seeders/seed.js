@@ -1,8 +1,10 @@
 let mongoose = require("mongoose");
 let db = require("../models");
 
-mongoose.connect("mongodb://localhost/activity-tracker", {
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/activity-tracker", {
   useNewUrlParser: true,
+  useFindAndModify: false,
+  useCreateIndex: true,
   useFindAndModify: false
 });
 

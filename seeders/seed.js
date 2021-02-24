@@ -82,6 +82,12 @@ let workoutSeed = [
         weight: 300,
         reps: 10,
         sets: 4
+      },
+      {
+        type: "cardio",
+        name: "Chasing after daughter on bicycle",
+        duration: 10,
+        distance: .5
       }
     ]
   },
@@ -121,12 +127,6 @@ let workoutSeed = [
         weight: 300,
         reps: 10,
         sets: 4
-      },
-      {
-        type: "cardio",
-        name: "Chasing after daughter on bicycle",
-        duration: 10,
-        distance: .5
       }
     ]
   }
